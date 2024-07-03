@@ -1,0 +1,59 @@
+Project Title: The Gordon Property Management System
+
+    -> The goal of the project is to create a System that allows Property owners and managers to control and manage thier properties in one place and with one click.
+
+Class of Users:
+    -> The sole user of the System are the Property owners
+
+Basic Features and Detailed Importance.
+    -> Leasing - 1     -> Rentals - 2  
+    -> Accounting      -> Analytics
+    -> Maintenance     -> Communication
+    -> Reports         -> Files
+    -> Task            -> Employees
+
+
+Explanations <->
+
+    -> Leasing(1) : This feature will allow the Property owners to create and edit
+                        * Lease Document
+                        * Lease Renewals
+                        * See and Manage Applicants
+    
+    -> Rentals(2): This feature shall handle and include
+                        * Rent Rolls thus, the durations of rents, dates of payment, Apartment IDs, location, etc..
+                        * Seperate List of all tenants, thier apartments, location, contacts etc...
+                        * List of properties
+    
+    -> Accounting(3): Arguably the about 1/2 the value of the entire project and business. This feature will include
+                        * A general ledger,
+                        * Taxes (Filing, Tax Estimations based on the states tax policy etc...)
+                        * Revenues (Expected Revenues, Estimated spendings based on maintenance to be done and other expenses etc...)
+                        * A short valuation report based on the current listings and other economic factors
+
+    -> Communication (4): This feature shall
+                        * Handle all commuications to tenants, employees and vendors if there are any
+                        * It shall have features of text messages, email, phone...
+
+    -> Maintenance(5): This feature shall handle
+                        * works needed to be done
+                        * monitor the life cycles of various wear and tear and give reports on when they are next expected to be replaced etc..
+
+    -> Analytics(6): As the name imply, this feature shall
+                        * show deep analysis of over alll works and happenings
+
+    -> Reports(7): This feature shall give
+                        * point by point reports on a weekly basis on overal activities.
+
+    -> Employees(8): This feature shall
+                        * handle or activities relating to employees
+                        * Handle activities of employment and releasing...
+
+    -> Files(9): This feature shall hold all files in relation to renting and leasing with identified name tags to allow proper book keeping....
+
+
+
+    -^- a feature Idea
+    A prompt interface that tells the user an answer 
+    User can promt to add an information and the system will automatically update that part....
+
