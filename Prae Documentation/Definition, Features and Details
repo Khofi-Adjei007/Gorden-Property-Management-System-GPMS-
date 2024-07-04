@@ -22,8 +22,8 @@ Explanations <->
     
     -> Rentals(2): This feature shall handle and include
                         * Rent Rolls thus, the durations of rents, dates of payment, Apartment IDs, location, etc..
-                        * Seperate List of all tenants, thier apartments, location, contacts etc...
-                        * List of properties
+                        * Tenats, Seperate List of all tenants, thier apartments, location, contacts etc...
+                        * Properties, List of properties
     
     -> Accounting(3): Arguably the about 1/2 the value of the entire project and business. This feature will include
                         * A general ledger,
@@ -31,19 +31,21 @@ Explanations <->
                         * Revenues (Expected Revenues, Estimated spendings based on maintenance to be done and other expenses etc...)
                         * A short valuation report based on the current listings and other economic factors
 
-    -> Communication (4): This feature shall
-                        * Handle all commuications to tenants, employees and vendors if there are any
-                        * It shall have features of text messages, email, phone...
+    -> Communication (4): This feature shall be responsible for all features of communications to all parties,  It shall have features of text messages, email, phone...
+                        * Tenant Comms
+                        * Employee Comms
+                        * Vendor Comms
+                        
 
-    -> Maintenance(5): This feature shall handle
-                        * works needed to be done
-                        * monitor the life cycles of various wear and tear and give reports on when they are next expected to be replaced etc..
+    -> Maintenance(5): This feature shall handle and track all traces and moves of maintenances
+                        * Pending Works thus, works needed to be done
+                        * In-Progess thus, monitor the life cycles of various wear and tear and give reports on when they are next expected to be replaced etc..
 
-    -> Analytics(6): As the name imply, this feature shall
+    -> Analytics(6): As the name imply, this feature shall show deep analysis of over alll works and happenings
                         * show deep analysis of over alll works and happenings
 
-    -> Reports(7): This feature shall give
-                        * point by point reports on a weekly basis on overal activities.
+    -> Reports(7): This feature shall give point by point reports on a weekly basis on overal activities.
+                        * 
 
     -> Employees(8): This feature shall
                         * handle or activities relating to employees
