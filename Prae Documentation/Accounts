@@ -1,0 +1,20 @@
+*Logics and FLow for Accounts and Creations*
+
+Landlord Account :-
+
+Only User That can create Accounts are landlords, Property Managers...
+We will require thier
+    -> First Name
+    -> Middle Name if any
+    -> last Name
+    -> Phone Number
+    -> Email Address
+    -> Profile Photo
+    -> We will create a unique username for them based on their names and the generated USER ID or Allow them to creat thier own unique username
+    -> Physical Address (eg: 66 Trinity Street)
+    -> Digitial Address
+    -> Number of Properties
+    -> Allow 7 days Trial with no strings attached....
+    -> 
+
+
