@@ -13,18 +13,115 @@
 
 <body>
 
-    <div class="min-h-screen py-40 px-36 bg-gray-900 bg-cover bg-center">
+    <div class="min-h-screen py-20 px-32 bg-gray-900 bg-cover bg-center">
     <div class="min-h-10 flex flex-col-2 justify-center">
 
     <!--Start of Body-->    
-    <div class="bg-gray-200 flex flex-col-1 rounded-lg drop-shadow-lg h-auto w-[70%]">
-        <div class="left-0 w-[40%]  rounded-l-lg h-full bg-gray-900">
-            <img class="object-fill h-[100%]" src="https://bioguard.com.au/wp-content/uploads/sites/2/2016/10/Blog_Green-Pool_2.jpg" alt="">
+        <div class="bg-gray-200 flex flex-col-1 rounded-lg drop-shadow-lg h-auto w-[70%]">
+        
+        <div class="left-0 w-[45%]  rounded-l-lg h-full bg-gray-900">
+        <img class="object-fill h-[100%]" src="https://images.pexels.com/photos/11124896/pexels-photo-11124896.jpeg" alt="">
         </div>
+        
 
-        <div class=" bg-gray-900">
-            <p>Hey</p>
+        <div class=" bg-green-800  h-full w-[55%] ">
+
+            <div class="flex justify-end p-2 right mt-4 mr-5 ">
+                <h3 class="text-yellow-400 text-sm">Already Have An Account? <a href="#"><span class="font-semibold text-green-950">Login</span></a></h3>
+            </div>
+
+            <div class="justify-center items-center mt-16 ml-10 mx-auto">
+                <h1 class="text-gray-100 justify-center font-bold text-4xl">Create Your Account Below</h1>
+                <span class=" text-sm text-gray-100 text-wrap text-justify">Managing Your Property Ledger, Accountancy and Day-To-Day <br> Activites has never been this easy </span>
+            </div>
+
+            <div class=" hidden justify-center items-center p-2 mt-16 ml-16">
+            <h1 class="text-gray-100 font-semibold justify-center"><span class="italic text-sm">Good To See You Champ...</span>  <br> <span class="font-bold text-3xl">Create Your Account Below</span> </h1>
+            </div>
+            
+            
+            <!--Start: User Category Selector-->
+            <div class="hidden w-[90%] object-center justify-center items-center p-3 mx-auto mt-12">             
+            <h3 class="mb-2 text-lg font-medium text-gray-900 dark:text-white">What Best Describes You:</h3>
+
+            <ul class="flex flex-col w-full gap-3 md:grid-cols-3 justify-center mx-auto">
+            <li>
+            <input type="checkbox" id="react-option" value="" class="hidden peer" required="">
+            <label for="react-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">                           
+            <div class="flex flex-col-2">
+
+            <div class="w-[10%] justify-center items-center mt-2">
+            <i class="ri-user-line text-4xl"></i>
+            </div>
+
+            <div class="w-full text-lg font-semibold ml-2">
+            <h1>I'm a Solo Property Owner</h1>
+            <div class="w-full text-sm italic">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy
+            </div>
+            </div>
+
+            </div>
+            </label>
+            </li>      
+            </ul>
+
+            
+            <ul class="flex flex-col w-full gap-5 mt-3 md:grid-cols-3 justify-center mx-auto">
+                <li>
+                <input type="checkbox" id="react-option" value="" class="hidden peer" required="">
+                <label for="react-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">                           
+                <div class="flex flex-col-2">
+    
+                <div class="w-[10%] justify-center items-center mt-2">
+                <i class="ri-group-line text-4xl"></i>
+                </div>
+    
+                <div class="w-full text-lg font-semibold ml-2">
+                <h1>We are an Organization/Agency</h1>
+                <div class="w-full text-sm italic">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy
+                </div>
+                </div>
+    
+                </div>
+                </label>
+                </li>      
+                </ul>
+
+                <div class="col-span-2 mt-4 w-full mx-auto">
+                <button type="submit" class="w-full px-4 py-2 bg-yellow-800 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:bg-yellow-600">Continue</button>
+                </div>
+                </div>
+            <!--End: User Category Selector---->
+
+
+
+
+            <!-- Start: Account Creation Details Form-->
+            <div class="w-[80%] justify-center items-center ml-10">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                        <div class="py-1 flex flex-col">
+                            <label for="{{ field.name }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
+                            <input type="{{ field.field.widget.input_type }}" id="{{ field.name }}" name="{{ field.name }}" placeholder="{{ field.label }}" class="w-full text-sm px-3 py-2 mt-1 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-span-2 mt-4">
+                        <button type="submit" class="w-full px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-yellow-700">Login</button>
+                    </div>
+                </form>
+            </div>
+            
+
+            <!--End: Account Creation Details Form-->
         </div>
+        
     </div>
     <!--End of Body-->    
     

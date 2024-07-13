@@ -17,4 +17,6 @@ We will require thier
     -> Allow 7 days Trial with no strings attached....
     -> 
 
-
+SO the user gets to the accounts creation creation page where they are asked if is registering as an individual or an organization.
+When they have selectefd thier choice, they are opened to different forms representing each category (individual User or organization) uniquely.
+After succesful form filling and authentication, they are taking to the dashboard for each catergory where they made...
