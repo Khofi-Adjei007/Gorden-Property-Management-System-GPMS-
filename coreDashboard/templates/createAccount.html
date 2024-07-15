@@ -5,32 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gordon Property MS | Create Account</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const checkbox = document.querySelector("input[name='Terms']");
-            const submitButton = document.querySelector("button[type='submit']");
-
-            // Function to toggle the disabled state of the submit button
-            function toggleSubmitButton() {
-                if (checkbox.checked) {
-                    submitButton.classList.remove("bg-gray-400", "cursor-not-allowed");
-                    submitButton.classList.add("bg-yellow-600", "hover:bg-yellow-500", "focus:bg-yellow-700");
-                    submitButton.disabled = false;
-                } else {
-                    submitButton.classList.remove("bg-yellow-600", "hover:bg-yellow-500", "focus:bg-yellow-700");
-                    submitButton.classList.add("bg-gray-400", "cursor-not-allowed");
-                    submitButton.disabled = true;
-                }
-            }
-
-            // Initial call to set the button state based on the checkbox
-            toggleSubmitButton();
-
-            // Event listener to toggle the button state when the checkbox is clicked
-            checkbox.addEventListener("change", toggleSubmitButton);
-        });
-
-    </script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -69,89 +43,61 @@
             
           
             <!--Start: User Category Selector-->
-            <div class="hidden w-[90%] object-center justify-center items-center p-2 mx-auto mt-12">             
+            <div class=" w-[90%] object-center justify-center items-center p-2 mx-auto mt-12">
                 <h3 class="mb-2 text-lg font-medium text-gray-900 dark:text-white">Tell Us What Describes You:</h3>
-        
                 <ul class="flex flex-col w-full gap-3 justify-center mx-auto">
-                    <li class="flex-grow w-full">
-                    <input type="radio" id="solo-option" name="user-category" value="solo" class="hidden peer" required="">
-                    <label for="solo-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">                           
-                    <div class="flex w-full">
-                    <div class="w-[10%] overflow-hidden justify-center items-center mt-2"><i class="ri-user-line text-6xl"></i></div>
-                    <div class="w-[90%] text-lg font-semibold ml-2">
-                    <h1 class="font-semibold text-gray-200">I'm a Solo Property Owner</h1>
-                    <div class="w-full text-sm mt-3">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy
-                    </div>
-                    </div>
-                    </div>
-                    </label>
-                    </li>
+                <li class="flex-grow w-full">
+                <input type="radio" id="solo-option" name="user-category" value="solo" class="hidden peer" required="">
+                <label for="solo-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">
+                <div class="flex w-full">
+                <div class="w-[10%] overflow-hidden justify-center items-center mt-2">
+                <i class="ri-user-line text-6xl"></i>
+                </div>
+                <div class="w-[90%] text-lg font-semibold ml-2">
+                <h1 class="font-semibold text-gray-200">I'm a Solo Property Owner</h1>
+                <div class="w-full text-sm mt-3">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy
+                </div>
+                </div>
+                </div>
+                </label>
+                </li>
                 </ul>
-        
+
                 <ul class="flex flex-col w-full gap-5 mt-3 justify-center mx-auto">
                     <li class="flex-grow w-full">
                         <input type="radio" id="organization-option" name="user-category" value="organization" class="hidden peer" required="">
-                        <label for="organization-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">                           
-                        <div class="flex w-full">
-                        <div class="w-[10%] overflow-hidden justify-center items-center mt-2 mr-2">
-                        <i class="ri-group-line text-6xl"></i>
-                        </div>
-                        <div class="w-[90%] text-lg font-semibold ml-2">
-                        <h1 class="font-semibold text-gray-200">We are an Organization/Agency</h1>
-                        <div class="w-full text-sm mt-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy
-                        </div>
-                        </div>
-                        </div>
+                        <label for="organization-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">
+                            <div class="flex w-full">
+                            <div class="w-[10%] overflow-hidden justify-center items-center mt-2 mr-2">
+                            <i class="ri-group-line text-6xl"></i>
+                            </div>
+                            <div class="w-[90%] text-lg font-semibold ml-2">
+                                    <h1 class="font-semibold text-gray-200">We are an Organization/Agency</h1>
+                                    <div class="w-full text-sm mt-3">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                        Lorem Ipsum has been the industry's standard dummy
+                                    </div>
+                                </div>
+                            </div>
                         </label>
                     </li>
                 </ul>
-
-                <!-- <div class="justify-center items-center mx-auto">
-                <h4 class="text-sm font-sans mt-3 justify-center items-center"><a href="">Read our Terms and Conditions of Use Here</a></h4>
-                </div> -->
-
                 <div class="mt-7 w-full mx-auto">
-                <button type="button" class="w-full px-4 py-2 hover:bg-yellow-600 bg-yellow-700 font-bold text-white rounded-md">Continue</button>
+                    <button type="button" class="w-full px-4 py-2 hover:bg-yellow-600 bg-yellow-700 font-bold text-white rounded-md">Continue</button>
                 </div>
-
             </div>
             <!--End: User Category Selector-->
 
 
-            <!-- Start: Account Creation Details Form For Solo, Individuals-->
-            <div class=" w-[80%] justify-center items-center ml-10 px-[-3]">
-                <form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {% csrf_token %}
-                    {% for field in form %}
-                    <div class=" flex flex-col">
-                    <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
-                    <input type="{{ field.field.widget.input_type }}" id="{{ field.name }}" name="{{ field.name }}" placeholder="{{ field.label }}" class="w-full text-sm px-3 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-                    {% endfor %}
-
-                    <div class="mx-auto justify-start left p-2 w-full  mt-1">
-                    <h3 class="font-semibold text-gray-50">Terms of Use</h3>
-                    <input type="checkbox" name="Terms" id="" class="mr-2"><span class="text-sm">I Accept and Agree to the </span><a href="#" class="text-yellow-700 font-bold">Terms of Use</a>
-                    </div>
-
-                    <div class="col-span-2">
-                    <button type="submit" class="w-full px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-yellow-700">Continue</button>
-                    </div>
-                </form> 
-            </div>
-            <!--End: Account Creation Details Form-->
-
-
-            <!-- Start: Account Creation Details Form For Organization-->
+            
+            <!-- Start: Account Creation Details Form For Solo, Individuals -->
             <div class="hidden w-[80%] justify-center items-center ml-10 px-[-3]">
                 <form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {% csrf_token %}
-                    {% for field in form %}
-                    <div class=" flex flex-col">
+                    {% for field in solo_form %}
+                    <div class="flex flex-col">
                     <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
                     <input type="{{ field.field.widget.input_type }}" id="{{ field.name }}" name="{{ field.name }}" placeholder="{{ field.label }}" class="w-full text-sm px-3 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
                     </div>
@@ -159,17 +105,46 @@
 
                     <div class="mx-auto justify-start left p-2 w-full mt-1">
                     <h3 class="font-semibold text-gray-50">Terms of Use</h3>
-                    <input type="checkbox" name="Terms" id="terms-checkbox" class="mr-2">
+                    <input type="checkbox" name="Terms" id="solo-terms-checkbox" class="mr-2">
                     <span class="text-sm text-gray-50">I Accept and Agree to the </span>
                     <a href="#" class="text-yellow-700 font-bold">Terms of Use</a>
                     </div>
-                    
+
                     <div class="col-span-2">
-                    <button type="submit" class="w-full px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-500 focus:outline-none focus:bg-yellow-700">Continue</button>
+                    <button type="submit" name="solo" class="w-full px-4 py-2 bg-gray-400 text-white rounded-md cursor-not-allowed" disabled>Continue</button>
                     </div>
-                </form> 
+                </form>
             </div>
-            <!--End: Account Creation Details Form for Organization-->
+            <!-- End: Account Creation Details Form For Solo, Individuals -->
+    
+
+
+           
+            <!-- Start: Account Creation Details Form For Organization -->
+            <div class="hidden w-[80%] justify-center items-center ml-10 px-[-3] mt-8">
+                <form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {% csrf_token %}
+                    {% for field in organization_form %}
+                    <div class="flex flex-col">
+                    <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
+                    <input type="{{ field.field.widget.input_type }}" id="{{ field.name }}" name="{{ field.name }}" placeholder="{{ field.label }}" class="w-full text-sm px-3 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    {% endfor %}
+
+                    <div class="mx-auto justify-start left p-2 w-full mt-1">
+                    <h3 class="font-semibold text-gray-50">Terms of Use</h3>
+                    <input type="checkbox" name="Terms" id="organization-terms-checkbox" class="mr-2">
+                    <span class="text-sm text-gray-50">I Accept and Agree to the </span>
+                    <a href="#" class="text-yellow-700 font-bold">Terms of Use</a>
+                    </div>
+
+                    <div class="col-span-2">
+                    <button type="submit" name="organization" class="w-full px-4 py-2 bg-gray-400 text-white rounded-md cursor-not-allowed" disabled>Continue</button>
+                    </div>
+                </form>
+            </div>
+             <!-- End: Account Creation Details Form for Organization -->
+
 
         </div>
     </div>
@@ -178,6 +153,63 @@
     </div>
     </div>
 
-   
+    <script>
+
+        // User Category Selector
+            document.addEventListener("DOMContentLoaded", function () {
+            const radioButtons = document.querySelectorAll('input[name="user-category"]');
+            const continueButton = document.querySelector('button[type="button"]');
+            const soloForm = document.getElementById('solo-form');
+            const organizationForm = document.getElementById('organization-form');
+            const radioContainer = document.querySelector('.w-[90%]');
+
+            continueButton.addEventListener("click", function () {
+                radioButtons.forEach(radio => {
+                    if (radio.checked) {
+                        if (radio.value === "solo") {
+                            soloForm.classList.remove('hidden');
+                            organizationForm.classList.add('hidden');
+                        } else if (radio.value === "organization") {
+                            organizationForm.classList.remove('hidden');
+                            soloForm.classList.add('hidden');
+                        }
+                        radioContainer.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Terms Checkbox
+        document.addEventListener("DOMContentLoaded", function () {
+            const soloTermsCheckbox = document.getElementById("solo-terms-checkbox");
+            const organizationTermsCheckbox = document.getElementById("organization-terms-checkbox");
+            const soloSubmitButton = document.querySelector("button[name='solo']");
+            const organizationSubmitButton = document.querySelector("button[name='organization']");
+
+            soloTermsCheckbox.addEventListener("change", function () {
+                if (this.checked) {
+                    soloSubmitButton.classList.remove("bg-gray-400", "cursor-not-allowed");
+                    soloSubmitButton.classList.add("bg-yellow-600", "hover:bg-yellow-500", "focus:bg-yellow-700");
+                    soloSubmitButton.disabled = false;
+                } else {
+                    soloSubmitButton.classList.remove("bg-yellow-600", "hover:bg-yellow-500", "focus:bg-yellow-700");
+                    soloSubmitButton.classList.add("bg-gray-400", "cursor-not-allowed");
+                    soloSubmitButton.disabled = true;
+                }
+            });
+
+            organizationTermsCheckbox.addEventListener("change", function () {
+                if (this.checked) {
+                    organizationSubmitButton.classList.remove("bg-gray-400", "cursor-not-allowed");
+                    organizationSubmitButton.classList.add("bg-yellow-600", "hover:bg-yellow-500", "focus:bg-yellow-700");
+                    organizationSubmitButton.disabled = false;
+                } else {
+                    organizationSubmitButton.classList.remove("bg-yellow-600", "hover:bg-yellow-500", "focus:bg-yellow-700");
+                    organizationSubmitButton.classList.add("bg-gray-400", "cursor-not-allowed");
+                    organizationSubmitButton.disabled = true;
+                }
+            });
+        });
+    </script>
 </body>
 </html>

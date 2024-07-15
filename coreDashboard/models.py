@@ -33,7 +33,7 @@ class Organization(models.Model):
     OrganizationDigitalAddress = models.CharField(max_length=200)
     Organization_City_Of_Operation = models.CharField(max_length=200)
     OrganizationStateOrRegion = models.CharField(max_length=200)
-    OrganiationLogo = models.ImageField(upload_to='organization/organization_logos')
+    OrganizationLogo = models.ImageField(upload_to='organization/organization_logos')
 
 
 #Properties | Buildings | Units | Rooms
