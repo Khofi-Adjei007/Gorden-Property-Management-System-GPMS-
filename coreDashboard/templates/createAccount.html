@@ -30,15 +30,11 @@
             <h3 class="text-yellow-400 text-sm">Already Have An Account? <a href="#"><span class="font-semibold text-green-950">Login</span></a></h3>
             </div>
 
-            <div class="justify-center items-center mt-6 mb-5 ml-10 mx-auto">
+            <div class="justify-center items-center mt-6 mb-2 ml-10 mx-auto">
             <h1 class="text-gray-100 justify-center font-bold text-4xl">Create Your Account Below</h1>
             <span class=" text-sm text-gray-100 text-wrap text-justify">Managing Your Property Ledger, Accountancy and Day-To-Day <br> Activites has never been this easy...</span>
             </div>
 
-            <div class=" hidden justify-center items-center p-2 mt-16 ml-16">
-            <h1 class="text-gray-100 font-semibold justify-center"><span class="italic text-sm">Good To See You Champ...</span>  <br> <span class="font-bold text-3xl">Create Your Account Below</span> </h1>
-            </div>
-            
             
           
             <!--Start: User Category Selector-->
@@ -100,12 +96,19 @@
                 <!-- Solo form fields go here -->
                 <form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {% csrf_token %}
+
+                    
+
                     {% for field in solo_form %}
                     <div class="flex flex-col">
                     <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
+                    {% for error in field.errors %}
+                    <p class="text-red-500 error-message">{{ error }}</p>
+                    {% endfor %}
                     <input type="{{ field.field.widget.input_type }}" id="{{ field.name }}" name="{{ field.name }}" placeholder="{{ field.label }}" class="w-full text-sm px-3 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
                     </div>
                     {% endfor %}
+
                     <div class="mx-auto justify-start left p-2 w-full mt-1">
                         <h3 class="font-semibold text-gray-50">Terms of Use</h3>
                         <input type="checkbox" id="solo-terms-checkbox" class="mr-2">
@@ -132,6 +135,7 @@
                 <!-- Organization form fields go here -->
                 <form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {% csrf_token %}
+
                     {% for field in organization_form %}
                         <div class="flex flex-col">
                             <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
