@@ -56,7 +56,7 @@ class OrganizationsRegistrations(forms.Form):
             raise forms.ValidationError(("Enter a valid Organization Address."))
         return OrganizationAddress
     
-    Organization_Registration_Number = forms.CharField(max_length=250, label='Organization Registration Number', error_messages={'required': 'Organization Registration Number is Required .',
+    Registration_Number = forms.CharField(max_length=250, label='Organization Registration Number', error_messages={'required': 'Registration Number is Required .',
                                                     'invalid': 'Registration Number is Invalid.'})
     def clean_Organization_Registration_Number(self):
         Organization_Registration_Number = self.cleaned_data['Organization_Registration_Number']

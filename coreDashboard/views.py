@@ -31,14 +31,15 @@ def create_account(request):
                     first_name=form_data['first_name'],
                     middle_name=form_data['middle_name'],
                     last_name=form_data['last_name'],
-                    phone=form_data['phone'],
                     email=form_data['email'],
+                    phone=form_data['phone'],
                     physical_address=form_data['physical_address'],
                     Digital_address=form_data['Digital_address'],
                     city_or_town=form_data['city_or_town'],
                     state_or_region=form_data['state_or_region'],
                     country=form_data['country'],
                     profile_photo=request.FILES['profile_photo']
+
                 )
                 # Redirect after successful form submission
                 return redirect('some_view_name')
@@ -63,7 +64,7 @@ def create_account(request):
                     OrganizationEmail=form_data['OrganizationEmail'],
                     OrganizationPhone=form_data['OrganizationPhone'],
                     OrganizationAddress=form_data['OrganizationAddress'],
-                    Organization_Registration_Number=form_data['Organization_Registration_Number'],
+                    Registration_Number=form_data['Registration_Number'],
                     OrganizationDigitalAddress=form_data['OrganizationDigitalAddress'],
                     Organization_City_Of_Operation=form_data['Organization_City_Of_Operation'],
                     OrganizationStateOrRegion=form_data['OrganizationStateOrRegion'],

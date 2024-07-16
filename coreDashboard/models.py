@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_countries.fields import CountryField
 
 
 #Landlords | Property Managers  | Asset Managers | Property Owners
@@ -13,7 +14,7 @@ class Landlord(models.Model):
     cityOrTown = models.CharField(max_length=200)
     stateOrRegion = models.CharField(max_length=200)
     profile_photo = models.ImageField(upload_to='landlord/profile_photos')
-    country = models.CharField(max_length=200)
+    country = CountryField(max_length=200)
     password = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -29,7 +30,7 @@ class Organization(models.Model):
     OrganizationEmail = models.EmailField()
     OrganizationPhone = models.CharField(max_length=200)
     OrganizationAddress = models.CharField(max_length=200)
-    Organization_Registration_Number = models.CharField(max_length=250)
+    Registration_Number = models.CharField(max_length=250)
     OrganizationDigitalAddress = models.CharField(max_length=200)
     Organization_City_Of_Operation = models.CharField(max_length=200)
     OrganizationStateOrRegion = models.CharField(max_length=200)
