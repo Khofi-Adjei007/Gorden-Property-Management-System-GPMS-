@@ -5,6 +5,7 @@ from .OrganizationsRegistrations import OrganizationsRegistrations
 from django.contrib.auth.models import User
 from .models import Landlord, Organization
 from django.shortcuts import redirect
+from django.http import HttpResponseForbidden
 
 
 
@@ -26,10 +27,10 @@ def create_account(request):
                 if created:
                     user.set_password(form_data['password'])
                     user.save()
+                    
                 # Save the form data to the Landlord model
                 Landlord.objects.create(
-                    first_name=form_data['first_name'],
-                    middle_name=form_data['middle_name'],
+                    Given_name=form_data['Given_name'],
                     last_name=form_data['last_name'],
                     email=form_data['email'],
                     phone=form_data['phone'],
@@ -39,13 +40,12 @@ def create_account(request):
                     state_or_region=form_data['state_or_region'],
                     country=form_data['country'],
                     profile_photo=request.FILES['profile_photo']
-
                 )
                 # Redirect after successful form submission
-                return redirect('some_view_name')
+                # return redirect('some_view_name') 
             else:
-                solo_form = form
-                Organization_form = OrganizationsRegistrations()
+                solo_form = form  
+                Organization_form = OrganizationsRegistrations()  
 
         elif 'Organization' in request.POST:
             form = OrganizationsRegistrations(request.POST, request.FILES)
@@ -71,10 +71,10 @@ def create_account(request):
                     OrganizationLogo=request.FILES['OrganizationLogo']
                 )
                 # Redirect after successful form submission
-                #return redirect('some_view_name')
+                # return redirect('some_view_name')
             else:
-                Organization_form = form
-                solo_form = landlordRegistrationsForm()
+                Organization_form = form  # Keep the form with errors
+                solo_form = landlordRegistrationsForm()  # Reset the other form
     else:
         solo_form = landlordRegistrationsForm()
         Organization_form = OrganizationsRegistrations()
@@ -88,5 +88,6 @@ def create_account(request):
 
 
 
+@csrf_protect
 def login(request):
     return render(request, 'login.html')

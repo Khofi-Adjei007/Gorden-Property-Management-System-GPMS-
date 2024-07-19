@@ -104,6 +104,7 @@
             <div class="w-[80%] justify-center items-center ml-10">
                 <form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {% csrf_token %}
+                    
                     {% for field in form %}
                     <div class=" flex flex-col">
                         <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
@@ -121,7 +122,7 @@
             <!--End: Account Creation Details Form-->
         </div>
         
-    </div>
+        </div>
     <!--End of Body-->    
     
     </div>

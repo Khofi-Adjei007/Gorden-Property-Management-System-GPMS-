@@ -7,9 +7,10 @@ import string
 
 #Landlords | Property Managers  | Asset Managers | Property Owners Registrations and Authentication
 class landlordRegistrationsForm(forms.Form):
-    first_name = forms.CharField(max_length=200, label='Given Name(s)', error_messages={'required': 'First Name is Required .',
+
+    Given_name = forms.CharField(max_length=200, label='Given Name(s)', error_messages={'required': 'First Name is Required .',
                                                     'invalid': 'Name is Invalid.'})
-    def clean_first_name(self):
+    def clean_Given_name(self):
         Given_name = self.cleaned_data['first_name']
         if Given_name is None:
             raise forms.ValidationError('First Name is Required.')
@@ -63,11 +64,11 @@ class landlordRegistrationsForm(forms.Form):
     
     digital_address = forms.CharField(max_length=200, label='Digital Address', error_messages={'required': 'Digital Address is Required .',
                                                     'invalid': 'Address is Invalid.'})
-    def Digital_address (self):
-        Digital_address = self.cleaned_data['Digital_address']
-        if Digital_address is None:
+    def digital_address (self):
+        digital_address = self.cleaned_data['Digital_address']
+        if digital_address is None:
             raise forms.ValidationError('Digital Address is Required.')
-        return Digital_address
+        return digital_address
     
     CityOrTown = forms.CharField(max_length=200, label='City or Town', error_messages={'required': 'City or Town is Required .',
                                                     'invalid': 'City or Town is Invalid.'})
@@ -112,7 +113,7 @@ class landlordRegistrationsForm(forms.Form):
             raise forms.ValidationError('Password is weak, Try Again')
         return password
     
-    confirm_password = forms.CharField(max_length=200, label='Confirm Password', error_messages={'required': 'Confirm Password is Required .',
+    confirm_password = forms.CharField(max_length=200, label='Confirm Password', error_messages={'required': 'Ooops! Please Confirmed Password.',
                                                     'invalid': 'Password is Invalid.'})
     def clean_confirm_password(self):
         password = self.cleaned_data.get('password')
