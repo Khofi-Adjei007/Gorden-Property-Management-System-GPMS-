@@ -5,7 +5,8 @@ from django_countries.fields import CountryField
 
 #Landlords | Property Managers  | Asset Managers | Property Owners
 class Landlord(models.Model):
-    Given_name = models.CharField(max_length=200)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
+    given_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     phone = models.CharField(max_length=200)
     email = models.EmailField()
