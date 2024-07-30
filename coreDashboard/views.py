@@ -17,9 +17,20 @@ def home(request):
     return render(request, 'home.html')
 
 def AccountSelector(request):
+    if request.method == "POST":
+        user_category = request.POST.get('user-category')
+
+        if user_category == 'solo':
+            return redirect('create_solo_account')
+        elif user_category == 'organization':
+            return redirect('create_organization_account')
+        else:
+            # If no valid option is selected, show an error or redirect back
+            messages.error(request, 'Please select a valid option.')
+            return redirect('AccountSelector')  # Adjust the redirect as needed
+
     return render(request, 'AccountSelector.html')
     
-
 
 def create_solo_account(request):
     if request.method == "POST" and 'solo' in request.POST:
@@ -95,7 +106,6 @@ def create_organization_account(request):
     return render(request, 'createAccount_Organization.html', {
         "organization_form": organization_form,
     })
-
 
 
 @csrf_protect
