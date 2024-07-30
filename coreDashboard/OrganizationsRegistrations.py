@@ -2,6 +2,7 @@ from django.db import models
 from .models import Organization
 import re
 from django import forms
+import string
 
 
 #Organizations | Companies | Institutions | Agencies Registrations and Authentication
@@ -98,6 +99,26 @@ class OrganizationsRegistrations(forms.Form):
         if OrganizationLogo is None:
             raise forms.ValidationError(' Provide at least one Organization Logo.')
         return OrganizationLogo
+    
+    password = forms.CharField(max_length=200, label='Password', error_messages={'required': 'Password is Required.', 'invalid': 'Password Input Is Invalid'})
+    def clean_password(self):
+        password = self.cleaned_data.get('password')
+        criteria = {'special': set(string.punctuation), 'numeric': set(string.digits), 'uppercase': set(string.ascii_uppercase)}
+        if len(password) < 8:
+            raise forms.ValidationError('Password must be at least 8 characters long.')
+        if not any(char in criteria['special'] for char in password) or \
+           not any(char in criteria['numeric'] for char in password) or \
+           not any(char in criteria['uppercase'] for char in password):
+            raise forms.ValidationError('Password is weak, Try Again')
+        return password
+    
+    confirm_password = forms.CharField(max_length=200, label='Confirm Password', error_messages={'required': 'Ooops! Please Confirmed Password.', 'invalid': 'Password is Invalid.'})
+    def clean_confirm_password(self):
+        password = self.cleaned_data.get('password')
+        confirm_password = self.cleaned_data.get('confirm_password')
+        if password != confirm_password:
+            raise forms.ValidationError('Passwords do not match.')
+        return confirm_password
     
 
 

@@ -36,6 +36,7 @@ class Organization(models.Model):
     Organization_City_Of_Operation = models.CharField(max_length=200)
     OrganizationStateOrRegion = models.CharField(max_length=200)
     OrganizationLogo = models.ImageField(upload_to='organization/organization_logos')
+    password = models.CharField(max_length=200)
 
 
 #Properties | Buildings | Units | Rooms

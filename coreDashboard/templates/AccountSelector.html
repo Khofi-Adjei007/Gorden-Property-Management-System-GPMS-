@@ -1,0 +1,143 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gordon Property MS | Create Account</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    {% tailwind_css %}
+</head>
+
+<body>
+
+    <div class="min-h-screen py-20 px-32 bg-gray-900 bg-cover bg-center">
+    <div class="min-h-10 flex flex-col-2 justify-center">
+
+    <!--Start of Body-->    
+        <div class="bg-gray-200 flex flex-col-1 rounded-lg drop-shadow-lg h-auto w-[90%]">
+        
+            <div class="left-0 w-[40%] rounded-l-lg h-full bg-gray-900">
+                <img class="object-cover brightness-110 w-full h-full" src="https://images.pexels.com/photos/11124896/pexels-photo-11124896.jpeg" alt="">
+            </div>
+            
+        
+
+        <div class=" bg-green-800  h-auto w-[60%] p-4">
+            <div class="flex justify-end p-2 right mt-1 mr-5 ">
+            <h3 class="text-yellow-400 text-sm">Already Have An Account? <a href="{% url 'login' %}"><span class="font-semibold text-green-950">Login</span></a></h3>
+            </div>
+
+            <div class="justify-center items-center mt-4 mb-2 ml-10 mx-auto">
+            <h1 class="text-gray-100 justify-center font-bold text-4xl">Create Your Account Below</h1>
+            <span class=" text-sm text-gray-100 text-wrap text-justify">Managing Your Property Ledger, Accountancy and Day-To-Day <br> Activites has never been this easy...</span>
+            </div>
+
+            
+          
+            <!--Start: User Category Selector-->
+            <div class="w-[90%] object-center justify-center items-center p-2 mx-auto mt-8">
+                <div class="radio-container">
+                    <h3 class="mb-2 text-lg font-medium text-gray-900 dark:text-white">Tell Us What Best Describes You:</h3>
+                    <ul class="flex flex-col w-full gap-3 justify-center mx-auto">
+                        <li class="flex-grow w-full">
+                        <input type="radio" id="solo-option" name="user-category" value="solo" class="hidden peer" required="">
+                        <label for="solo-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">                           
+                        <div class="flex w-full">
+                        <div class="w-[10%] overflow-hidden justify-center items-center mt-2">
+                        <i class="ri-user-line text-6xl"></i>
+                        </div>
+                        <div class="w-[90%] text-lg font-semibold ml-2">
+                        <h1 class="font-semibold text-gray-200">I'm a Solo Property Owner</h1>
+                        <div class="w-full text-sm mt-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy
+                        </div>
+                        </div>
+                        </div>
+                        </label>
+                        </li>
+                    </ul>
+            
+                    <a href="#">
+                    <ul class="flex flex-col w-full gap-5 mt-3 justify-center mx-auto">
+                        <li class="flex-grow w-full">
+                        <input type="radio" id="organization-option" name="user-category" value="organization" class="hidden peer" required="">
+                        <label for="organization-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">                           
+                        <div class="flex w-full">
+                        <div class="w-[10%] overflow-hidden justify-center items-center mt-2 mr-2">
+                        <i class="ri-group-line text-6xl"></i>
+                        </div>
+                        <div class="w-[90%] text-lg font-semibold ml-2">
+                        <h1 class="font-semibold text-gray-200">We are an Organization/Agency</h1>
+                        <div class="w-full text-sm mt-3">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                        Lorem Ipsum has been the industry's standard dummy
+                        </div>
+                        </div>
+                        </div>
+                        </label>
+                        </li>
+                    </ul>
+                        </a>
+
+                    <div class="mt-7 w-full mx-auto">
+                        <button type="button" class="w-full px-4 py-2 hover:bg-yellow-600 bg-yellow-700 font-bold text-white rounded-md">Continue</button>
+                    </div>
+                </div>
+            </div>
+            <!--End: User Category Selector-->
+        </div>
+             
+
+
+        </div>
+    </div>
+    <!--End of Body-->    
+    
+    </div>
+    </div>
+
+    <script>
+    // User Category Selector
+    document.addEventListener("DOMContentLoaded", function () {
+    const radioButtons = document.querySelectorAll('input[name="user-category"]');
+    const continueButton = document.querySelector('button[type="button"]');
+    const soloForm = document.getElementById('solo-form');
+    const organizationForm = document.getElementById('organization-form');
+    const radioContainer = document.querySelector('.radio-container');
+    const backButton = document.querySelector('#back-button');
+
+    // Initially hide the forms and the back button
+    soloForm.classList.add('hidden');
+    organizationForm.classList.add('hidden');
+    backButton.classList.add('hidden');
+
+    continueButton.addEventListener("click", function () {
+        radioButtons.forEach(radio => {
+            if (radio.checked) {
+                if (radio.value === "solo") {
+                    soloForm.classList.remove('hidden');
+                    organizationForm.classList.add('hidden');
+                } else if (radio.value === "organization") {
+                    organizationForm.classList.remove('hidden');
+                    soloForm.classList.add('hidden');
+                }
+                radioContainer.classList.add('hidden');
+                backButton.classList.remove('hidden');
+            }
+        });
+    });
+
+    backButton.addEventListener("click", function () {
+        soloForm.classList.add('hidden');
+        organizationForm.classList.add('hidden');
+        radioContainer.classList.remove('hidden');
+        backButton.classList.add('hidden');
+    });
+});
+    </script>
+</body>
+</html>

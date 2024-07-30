@@ -16,6 +16,10 @@ from django.contrib import messages
 def home(request):
     return render(request, 'home.html')
 
+def AccountSelector(request):
+    return render(request, 'AccountSelector.html')
+    
+
 
 def create_solo_account(request):
     if request.method == "POST" and 'solo' in request.POST:
@@ -50,7 +54,7 @@ def create_solo_account(request):
     else:
         solo_form = landlordRegistrationsForm()
 
-    return render(request, 'createAccount.html', {
+    return render(request, 'createAccount_solo.html', {
         "solo_form": solo_form,
     })
 
@@ -88,7 +92,7 @@ def create_organization_account(request):
     else:
         organization_form = OrganizationsRegistrations()
 
-    return render(request, 'createAccount.html', {
+    return render(request, 'createAccount_Organization.html', {
         "organization_form": organization_form,
     })
 
