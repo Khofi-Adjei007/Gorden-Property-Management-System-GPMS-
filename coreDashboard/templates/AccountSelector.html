@@ -39,15 +39,14 @@
           
             <!--Start: User Category Selector-->
             <div class="w-[90%] object-center justify-center items-center p-2 mx-auto mt-8">
-
                 <form action="{% url 'AccountSelector' %}" method="post" id="formSelector">
                     {% csrf_token %}
                     <div class="radio-container">
-                        <h3 class="mb-2 text-lg font-medium text-gray-900 dark:text-white">Tell Us What Best Describes You:</h3>
+                        <h3 class="mb-2 text-lg font-medium text-gray-100 dark:text-white">Tell Us What Best Describes You:</h3>
                         <ul class="flex flex-col w-full gap-3 justify-center mx-auto">
                             <li class="flex-grow w-full">
                                 <input type="radio" id="solo-option" name="user-category" value="solo" class="hidden peer" required="">
-                                <label for="solo-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">
+                                <label for="solo-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-100 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">
                                     <div class="flex w-full">
                                         <div class="w-[10%] overflow-hidden justify-center items-center mt-2">
                                             <i class="ri-user-line text-6xl"></i>
@@ -67,7 +66,7 @@
                         <ul class="flex flex-col w-full gap-5 mt-3 justify-center mx-auto">
                             <li class="flex-grow w-full">
                                 <input type="radio" id="organization-option" name="user-category" value="organization" class="hidden peer" required="">
-                                <label for="organization-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">
+                                <label for="organization-option" class="inline-flex items-center justify-between w-full p-5 text-yellow-500 bg-green-800 border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-yellow-600 peer-checked:border-yellow-100 hover:text-yellow-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-100 hover:bg-gray-50 dark:text-yellow-600 dark:bg-green-950 dark:hover:bg-yellow-900">
                                     <div class="flex w-full">
                                         <div class="w-[10%] overflow-hidden justify-center items-center mt-2 mr-2">
                                             <i class="ri-group-line text-6xl"></i>
@@ -85,16 +84,13 @@
                         </ul>
                 
                         <div class="mt-7 w-full mx-auto">
-                            <button type="button" id="continueButton" class="w-full px-4 py-2 hover:bg-yellow-600 bg-yellow-700 font-bold text-white rounded-md">Continue</button>
+                        <button type="button" id="continueButton" class="w-full px-4 py-2 hover:bg-yellow-600 bg-yellow-700 font-bold text-white rounded-md">Continue</button>
                         </div>
                     </div>
                 </form>
             </div>
             <!--End: User Category Selector-->
         </div>
-             
-
-
         </div>
     </div>
     <!--End of Body-->    
@@ -112,7 +108,6 @@
     const radioContainer = document.querySelector('.radio-container');
     const backButton = document.querySelector('#back-button');
     });
-
     document.getElementById('continueButton').addEventListener('click', function() {
     const soloOption = document.getElementById('solo-option').checked;
     const organizationOption = document.getElementById('organization-option').checked;
@@ -125,9 +120,8 @@
         alert('Please select an option.');
         return;
     }
-    
     document.getElementById('formSelector').submit();
-});
+    });
 
     </script>
 </body>
