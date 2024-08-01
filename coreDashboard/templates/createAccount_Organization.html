@@ -35,36 +35,59 @@
         <!-- Start: Account Creation Details Form For Organization -->
         <div id="organization-form" class=" w-[90%] object-center justify-center items-center p-2 mx-auto">
             <h3 class="mb-2 text-lg font-medium text-gray-100 dark:text-white">We See You've got an Army:</h3>
+<!-- Organization form fields go here -->
+<form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    {% csrf_token %}
+    
+    {% for field in organization_form %}
+        <div class="flex flex-col">
+            <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">
+                {{ field.label }}<span class="text-red-700 ml-1">*</span>
+            </label>
 
-            <!-- Organization form fields go here -->
-            <form method="post" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {% csrf_token %}
-                    {% for field in organization_form %}
-                        <div class="flex flex-col">
-                        <label for="{{ field.id_for_label }}" class="block text-sm text-yellow-600">{{ field.label }}<span class="text-red-700 ml-1">*</span></label>
-                        
-                        {% for error in field.errors %}
-                        <p class="text-red-500 error-message">{{ error }}</p>
-                        {% endfor %}
-
-                        <input type="{{ field.field.widget.input_type }}" id="{{ field.name }}" name="{{ field.name }}" placeholder="{{ field.label }}" class="w-full text-sm px-3 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
-                        </div>
+            <!-- Display field-specific errors -->
+            {% if field.errors %}
+                <p class="text-red-500 error-message">
+                    {% for error in field.errors %}
+                        {{ error }}<br>
                     {% endfor %}
-                    <div class="mx-auto justify-start left p-2 w-full mt-1">
-                        <h3 class="font-semibold text-gray-50">Terms of Use</h3>
-                        <input type="checkbox" id="organization-terms-checkbox" class="mr-2">
-                        <span class="text-sm text-gray-50">I Accept and Agree to the </span>
-                        <a href="#" class="text-yellow-700 font-bold">Terms of Use</a>
-                    </div>
-                    <div class="col-span-2">
-                    <button type="submit" name="organization" class="w-full px-4 py-2 bg-gray-400 text-white rounded-md cursor-not-allowed" disabled>Continue</button>
-                    </div>
-                    <div id="back-button" class="mt-7 w-full mx-auto hidden">
-                    <button type="button" class="w-full px-4 py-2 hover:bg-yellow-600 bg-yellow-700 font-bold text-white rounded-md">Back</button>
-                    </div>
-                </form>
-            </div>
-            <!-- End: Account Creation Details Form for Organization -->
+                </p>
+            {% endif %}
+
+            <!-- Render the appropriate input type -->
+            {% if field.field.widget.input_type == 'checkbox' %}
+                {{ field }}
+            {% elif field.field.widget.input_type == 'select' %}
+                <select id="{{ field.id_for_label }}" name="{{ field.name }}" class="w-full text-sm px-3 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+                    <option value="" disabled selected>{{ field.label }}</option>
+                    {% for choice in field.field.choices %}
+                        <option value="{{ choice.0 }}" {% if choice.0 == field.value %}selected{% endif %}>{{ choice.1 }}</option>
+                    {% endfor %}
+                </select>
+            {% else %}
+                <input type="{{ field.field.widget.input_type }}" id="{{ field.id_for_label }}" name="{{ field.name }}" placeholder="{{ field.label }}" class="w-full text-sm px-3 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500" value="{{ field.value|default_if_none:'' }}">
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <div class="mx-auto justify-start left p-2 w-full mt-1">
+        <h3 class="font-semibold text-gray-50">Terms of Use</h3>
+        <input type="checkbox" id="organization-terms-checkbox" class="mr-2">
+        <span class="text-sm text-gray-50">I Accept and Agree to the </span>
+        <a href="#" class="text-yellow-700 font-bold">Terms of Use</a>
+    </div>
+
+    <div class="col-span-2">
+        <button type="submit" name="organization" class="w-full px-4 py-2 bg-gray-400 text-white rounded-md cursor-not-allowed" disabled>Continue</button>
+    </div>
+
+    <div id="back-button" class="mt-7 w-full mx-auto hidden">
+        <button type="button" class="w-full px-4 py-2 hover:bg-yellow-600 bg-yellow-700 font-bold text-white rounded-md">Back</button>
+    </div>
+</form>
+<!-- End: Account Creation Details Form for Organization -->
+
+
         </div>
              
         </div>

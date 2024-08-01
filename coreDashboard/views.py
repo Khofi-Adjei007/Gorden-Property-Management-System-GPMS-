@@ -99,7 +99,6 @@ def create_organization_account(request):
         else:
             # Form is not valid, re-render the page with errors
             messages.error(request, 'There were errors in your form submission.')
-
     else:
         organization_form = OrganizationsRegistrations()
 
@@ -111,3 +110,6 @@ def create_organization_account(request):
 @csrf_protect
 def login(request):
     return render(request, 'login.html')
+
+
+
